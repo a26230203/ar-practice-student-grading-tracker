@@ -25,10 +25,11 @@ puts "Seeding StudentExams..."
   exam = Exam.all.sample
   student = Student.all.sample
   grade_score = rand(0..100)
+  teacher_comment = Faker::Creature::Dog.meme_phrase
 
   # TODO: create StudentExams! Remember, a StudentExam belongs to an exam
   # and a StudentExam belongs to a student.
-  StudentExam.create() # <- insert key value pairs required to create a studentExam!
+  StudentExam.create(grade:grade_score, teacher_comment:teacher_comment, exam_id: exam.id, student_id: student.id)  # <- insert key value pairs required to create a studentExam!
 
 end
 
